@@ -1,0 +1,86 @@
+:root {
+  --primary-color: #b6895b;
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --button-hover: #99680d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.separator .line {
+  flex: 1;
+  height: 1px;
+  background-color: #ccc;
+}
+
+.separator p {
+  margin: 0 10px;
+  font-size: 14px;
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+form a {
+  font-size: 14px;
+  color: var(--text-color);
+  text-decoration: none;
+  align-self: flex-end;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
+
+form .btn {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form .btn:hover {
+  background-color: var(--button-hover);
+}

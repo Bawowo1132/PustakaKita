@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/login.css" />
+    <title>Login Pustaka Kita</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="login-section">
+        <div style="text-align: center; margin: 20px 0;">
+          <i class="bx bxs-user-circle" style="font-size: 80px; color: #99680d;"></i>
+        </div>
+
+        <div class="separator">
+          <div class="line"></div>
+          <p>Login with Email</p>
+          <div class="line"></div>
+        </div>
+
+        <!-- Form Login -->
+        <form action="" method="POST">
+          <input type="email" name="email" placeholder="Email address" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <a href="#">Forgot Password?</a>
+          <button type="submit" class="btn">Login</button>
+        </form>
+
+        <!-- Display error message -->
+        <?php if ($error): ?>
+          <p style="color: red; text-align: center; margin-top: 10px;"><?php echo $error; ?></p>
+        <?php endif; ?>
+      </div>
+    </div>
+
+    <script src="js/"></script>
+  </body>
+</html>
