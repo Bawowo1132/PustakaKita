@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "INSERT INTO donasi (nama_lengkap, nomor_hp, email, jumlah_donasi, metode_pembayaran) 
             VALUES (?, ?, ?, ?, ?)";
 
+
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("sssis", $nama_lengkap, $nomor_hp, $email, $jumlah_donasi, $metode_pembayaran);
 
