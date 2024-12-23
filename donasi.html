@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pustaka Kita</title>
-    <link rel="stylesheet" href="css/donasi1.css">
+    <link rel="stylesheet" href="css/donasi.css" />
   </head>
   <body>
     <div id="donation-forms">
       <!-- Form pertama untuk memilih jumlah donasi -->
       <div id="donation-form-1" class="donation-form-overlay">
         <div class="donation-form-container">
+          <button class="back-btn" id="back-btn-1">&larr;</button>
           <h2>Donasi Sekarang</h2>
           <div class="amount-options">
             <button class="amount-btn" data-amount="15000">Rp 15.000</button>
@@ -29,7 +30,7 @@
       <!-- Form kedua untuk data diri donatur -->
       <div id="donation-form-2" class="donation-form-overlay hidden">
         <div class="donation-form-container">
-          <button class="back-btn" id="back-btn-2">&larr; Kembali</button>
+          <button class="back-btn" id="back-btn-2">&larr;</button>
           <h2>Data Diri Donatur</h2>
           <form id="donor-form">
             <div class="form-group">
@@ -58,7 +59,7 @@
       <!-- Form ketiga untuk memilih metode pembayaran -->
       <div id="donation-form-3" class="donation-form-overlay hidden">
         <div class="donation-form-container">
-          <button class="back-btn" id="back-btn-3">&larr; Kembali</button>
+          <button class="back-btn" id="back-btn-3">&larr;</button>
           <h2>Pilih Metode Pembayaran</h2>
           <form id="payment-method-form">
             <div class="form-group">
@@ -76,9 +77,10 @@
 
     <!-- Notifikasi sukses -->
     <div id="success-notification" class="notification hidden">
-      <p>Donasi Berhasil!</p>
+      <p>Donasi Berhasil</p>
     </div>
 
-    <script src="js/donasi1.js"></script>
-  </body>
+    <script src="js/donasi.js"></script>
+     
+  </body>
 </html>

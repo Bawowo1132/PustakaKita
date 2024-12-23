@@ -1,13 +1,9 @@
 <?php
-include('koneksi.php');
+include('../php/koneksi.php');
 
 
 $donasi_query = "SELECT * FROM donasi";
 $donasi_result = $conn->query($donasi_query);
-
-// Query to get Feedback data
-$feedback_query = "SELECT * FROM feedback";
-$feedback_result = $conn->query($feedback_query);
 
 // Query to get Laporan data
 $laporan_query = "SELECT * FROM laporan";
@@ -22,6 +18,9 @@ $BantuanSekolahCendekia_result = $conn->query($BantuanSekolahCendekia_query);
 $pendaftaran_query = "SELECT * FROM pendaftaran_beasiswa";
 $pendaftaran_result = $conn->query($pendaftaran_query);
 
+$feedback_query = "SELECT * FROM feedbacks";
+$feedback_result = $conn->query($feedback_query);
+
 
 ?>
 
@@ -34,7 +33,7 @@ $pendaftaran_result = $conn->query($pendaftaran_query);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Administrator</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="/css/admin.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
 </head>
 
 <body>
@@ -88,22 +87,22 @@ $pendaftaran_result = $conn->query($pendaftaran_query);
                 <div class="alert">Welcome admin ganteng.</div>
             </section>
             <section id="beranda" class="content-section">
-                <h3>Selamat datang di Dashboard</h3>
-                <div class="cards">
-                    <div class="card">
-                        <h5>Total Donasi</h5>
-                        <p class="number">8</p>
-                    </div>
-                    <div class="card">
-                        <h5>Total Transaksi</h5>
-                        <p class="number">24</p>
-                    </div>
-                    <div class="card">
-                        <h5>Feedback Masuk</h5>
-                        <p class="number">2</p>
-                    </div>
-                </div>
-            </section>
+          <h3>Selamat datang di Dashboard</h3>
+          <div class="cards">
+            <div class="card">
+              <h5>Total Donasi</h5>
+              <p class="number">8</p>
+            </div>
+            <div class="card">
+              <h5>Total Transaksi</h5>
+              <p class="number">24</p>
+            </div>
+            <div class="card">
+              <h5>Feedback Masuk</h5>
+              <p class="number">2</p>
+            </div>
+          </div>
+        </section>
 
             <section id="data-donasi" class="content-section" style="display: none;">
                 <h3>Data Donasi</h3>
@@ -123,8 +122,8 @@ $pendaftaran_result = $conn->query($pendaftaran_query);
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        if ($donasi_result) {
+                    <?php
+                        if ($donasi_result->num_rows > 0) {
                             while ($row = $donasi_result->fetch_assoc()) {
                                 echo "<tr>";
                                 echo "<td>" . $row['nama_lengkap'] . "</td>";
@@ -138,7 +137,7 @@ $pendaftaran_result = $conn->query($pendaftaran_query);
                         } else {
                             echo "<tr><td colspan='6'>Tidak ada data donasi.</td></tr>";
                         }
-                        ?>
+                    ?>
                     </tbody>
                 </table>
             </section>
@@ -331,32 +330,24 @@ $pendaftaran_result = $conn->query($pendaftaran_query);
                             <th>Email</th>
                             <th>Pesan</th>
                             <th>Tanggal</th>
-                            <th>Balasan</th>
                         </tr>
                     </thead>
                     <tbody id="feedback-table">
-                        <tr>
-                            <td>Alice</td>
-                            <td>08171635281</td>
-                            <td>alice@example.com</td>
-                            <td>Great service, thank you!</td>
-                            <td>2024-12-12</td>
-                            <td>
-                                <textarea rows="2" cols="20" placeholder="Tulis balasan di sini..."></textarea><br>
-                                <button class="send-reply-button">Kirim</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Bob</td>
-                            <td>089735173625</td>
-                            <td>bob@example.com</td>
-                            <td>Needs improvement on the donation process.</td>
-                            <td>2024-12-11</td>
-                            <td>
-                                <textarea rows="2" cols="20" placeholder="Tulis balasan di sini..."></textarea><br>
-                                <button class="send-reply-button">Kirim</button>
-                            </td>
-                        </tr>
+                    <?php
+                        if ($feedback_result->num_rows > 0) {
+                            while ($row = $feedback_result->fetch_assoc()) {
+                                echo "<tr>";
+                                echo "<td>" . htmlspecialchars($row['nama_lengkap']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['telepon']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['email']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['pesan']) . "</td>";
+                                echo "<td>" . htmlspecialchars($row['created_at']) . "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='6'>No feedback available</td></tr>";
+                        }
+                        ?>
                     </tbody>
                 </table>
             </section>
@@ -553,6 +544,7 @@ $pendaftaran_result = $conn->query($pendaftaran_query);
 
             <script src="../js/admin.js"></script>
             <script src="../js/statuspendaftaran.js"></script>
+            
 
 </body>
 

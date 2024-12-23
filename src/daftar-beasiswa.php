@@ -1,5 +1,5 @@
 <?php
-include('koneksi.php');
+include('../php/koneksi.php');
 // Periksa apakah form sudah dikirim
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nama = $_POST['nama'];
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     );
 
     if ($stmt->execute()) {
-        echo "<script>alert('Data berhasil disimpan.'); window.location.href = '../index.html';</script>";
+        echo "<script>alert('Donasi berhasil!'); window.location.href = 'index.php';</script>";
     } else {
         echo "<script>alert('Terjadi kesalahan: " . $stmt->error . "');</script>";
     }

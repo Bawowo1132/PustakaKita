@@ -3,14 +3,14 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     height: 100vh;
-}
-
-.container {
+  }
+  
+  .container {
     display: flex;
     width: 100%;
-}
-
-.sidebar {
+  }
+  
+  .sidebar {
     background-color: hwb(312 4% 15%);
     color: white;
     width: 250px;
@@ -18,157 +18,157 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-.sidebar-header {
+  }
+  
+  .sidebar-header {
     margin-bottom: 30px;
     text-align: center;
-}
-
-.profile-picture {
+  }
+  
+  .profile-picture {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin: 0 auto 10px;
     object-fit: cover;
     cursor: pointer;
-}
-
-.sidebar ul {
+  }
+  
+  .sidebar ul {
     list-style: none;
     padding: 0;
-}
-
-.sidebar ul li {
+  }
+  
+  .sidebar ul li {
     margin-bottom: 15px;
-}
-
-.sidebar ul li a {
+  }
+  
+  .sidebar ul li a {
     text-decoration: none;
     color: white;
     display: block;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
+  }
+  
+  .sidebar ul li a:hover {
     background-color: hwb(312 4% 15%);
-}
-
-.submenu {
+  }
+  
+  .submenu {
     margin-left: 20px;
     display: none;
-}
-
-.sidebar ul li:hover>.submenu {
+  }
+  
+  .sidebar ul li:hover > .submenu {
     display: block;
-}
-
-.submenu a {
+  }
+  
+  .submenu a {
     padding: 10px 15px;
     text-decoration: none;
     color: white;
     display: block;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-
-.submenu a:hover {
+  }
+  
+  .submenu a:hover {
     background-color: hwb(312 4% 15%);
-}
-
-.content {
+  }
+  
+  .content {
     flex-grow: 1;
     background-color: #ecf0f1;
     padding: 20px;
     overflow-y: auto;
-}
-
-header {
+  }
+  
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-}
-
-.logout-button {
+  }
+  
+  .logout-button {
     background-color: hwb(312 4% 15%);
     color: white;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-}
-
-.logout-button:hover {
+  }
+  
+  .logout-button:hover {
     background-color: hwb(312 4% 15%);
-}
-
-.alert {
+  }
+  
+  .alert {
     background-color: hwb(312 4% 15%);
     color: white;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 5px;
-}
-
-.cards {
+  }
+  
+  .cards {
     display: flex;
     gap: 20px;
-}
-
-.card {
+  }
+  
+  .card {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex: 1;
     text-align: center;
-}
-
-.card h5 {
+  }
+  
+  .card h5 {
     margin-bottom: 10px;
     font-size: 18px;
-}
-
-.card .number {
+  }
+  
+  .card .number {
     font-size: 24px;
-    color:hwb(312 4% 15%);
+    color: hwb(312 4% 15%);
     font-weight: bold;
-}
-
-table {
+  }
+  
+  table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-}
-
-table th,
-table td {
+  }
+  
+  table th,
+  table td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-}
-
-table th {
-    background-color:hwb(312 4% 15%);
+  }
+  
+  table th {
+    background-color: hwb(312 4% 15%);
     color: white;
-}
-
-button {
+  }
+  
+  button {
     padding: 10px 15px;
     background-color: hwb(312 4% 15%);
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-button:hover {
-    background-color:hwb(312 4% 15%);
-}
-
-#modal {
+  }
+  
+  button:hover {
+    background-color: hwb(312 4% 15%);
+  }
+  
+  #modal {
     display: none;
     position: fixed;
     top: 50%;
@@ -178,4 +178,87 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    resize: none;
+  }
+  
+  .send-reply-button {
+    background-color: hwb(312 4% 15%);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .send-reply-button:hover {
+    background-color: hwb(312 3% 20%);
+  }
+  
+  .chart-container {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Ukuran grafik */
+    margin-bottom: 20px;
+  }
+  
+  /* CSS untuk Navbar */
+  .navbar {
+    background-color: #333; /* Warna latar belakang navbar */
+    padding: 10px 20px; /* Padding untuk navbar */
+    display: flex; /* Menyusun item navbar secara horizontal */
+    justify-content: flex-start; /* Menyusun logo di kiri */
+    align-items: center; /* Vertikal center logo */
+    position: fixed; /* Memastikan navbar tetap di atas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Memastikan navbar di atas elemen lain */
+  }
+  
+  /* Gaya untuk Logo */
+  .navbar-logo {
+    color: white; /* Warna teks logo */
+    font-size: 24px; /* Ukuran font logo */
+    font-weight: bold;
+    text-decoration: none; /* Menghilangkan garis bawah pada link */
+    letter-spacing: 1px; /* Memberikan jarak antar huruf */
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Gaya untuk tag <span> pada logo */
+  .navbar-logo span {
+    color: #f39c12; /* Warna berbeda untuk bagian "Kita" */
+  }
+  
+  /* Menambahkan efek hover pada logo */
+  .navbar-logo:hover {
+    color: #f39c12; /* Warna saat hover */
+  }
+  
+  /* Konten Utama */
+  .container {
+    margin-top: 80px; /* Memberikan ruang lebih untuk navbar yang fixed */
+    display: flex;
+    width: 100%;
+  }
+  
+  /* Styling Foto Profil */
+  .profile-picture {
+    width: 90px; /* Menyesuaikan ukuran foto profil */
+    height: 90px;
+    border-radius: 50%;
+    margin: 10px auto; /* Menjaga jarak dari atas dan bawah */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    cursor: pointer;
+    z-index: 9999; /* Pastikan foto profil tetap di atas */
+    position: relative; /* Pastikan posisi relatif agar tidak tertutup navbar */
+  }
+  

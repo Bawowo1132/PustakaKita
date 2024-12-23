@@ -2,7 +2,6 @@
  include('../php/koneksi.php');
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +19,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
     <!-- Navbar Start -->
@@ -36,7 +35,7 @@
       </div>
 
       <div class="navbar-extra">
-        <a href="php/login.php" id="user"><i data-feather="user"></i></a>
+        <a href="login.php" id="user"><i data-feather="user"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
@@ -51,7 +50,7 @@
           memprihatinkan kembali terbangun.
         </p>
         <p>Mari berdonasi demi memajukan pendidikan di Indonesia.</p>
-        <a href="php/donasi.php" class="cta">Donasi Sekarang</a>
+        <a href="donasi.php" class="cta">Donasi Sekarang</a>
       </main>
     </section>
     <!-- Hero Section End -->
@@ -62,7 +61,7 @@
 
       <div class="row">
         <div class="about-img">
-          <img src="img/tentang-kami.jpg" alt="Tentang Kami" />
+          <img src="../img/tentang-kami.jpg" alt="Tentang Kami" />
         </div>
         <div class="content">
           <h3>Siapa <span>Pustaka</span><span class="kita">Kita</span>. ?</h3>
@@ -92,17 +91,17 @@
 
       <div class="row">
         <div class="program-card">
-          <img src="img/program/beasiswa.jpg" alt="Donasi buku" class="program-card-img" />
+          <img src="../img/program/beasiswa.jpg" alt="Donasi buku" class="program-card-img" />
           <h3 class="program-card-title">Beasiswa Bangsa Cendekia</h3>
           <p class="program-card-p">
             Kami mengumpulkan donasi dari para donatur untuk mendanai bantuan dana pendidikan berupa
             beasiswa kepada siswa terpilih yang membutuhkan.
           </p>
-          <a href="php/daftar.php" class="cta">Daftar Beasiswa</a>
+          <a href="../php/daftar-beasiswa.php" class="cta">Daftar Beasiswa</a>
         </div>
         <div class="program-card">
           <img
-            src="img/program/sekolah.jpg"
+            src="../img/program/sekolah.jpg"
             alt="Siswa belajar di kelas"
             class="program-card-img"
           />
@@ -111,7 +110,7 @@
             Kami mendistribusikan dana donasi dari para donatur untuk membantu sekolah - sekolah
             terpilih yang membutuhkan bantuan.
           </p>
-          <a href="php/beasiswasekolah.php" class="cta">Daftar Bantuan Sekolah</a>
+          <a href="daftar-sekolah.php" class="cta">Daftar Bantuan Sekolah</a>
         </div>
       </div>
     </section>
@@ -137,12 +136,12 @@
           <button class="carousel-btn prev-btn">&lt;</button>
           <div class="carousel-images">
             <img
-              src="img/program/belajar.jpg"
+              src="../img/program/belajar.jpg"
               alt="Sekelompok siswa sedang bermain laptop "
               class="active"
             />
-            <img src="img/program/belajar2.jpg" alt="Siswa sedang angkat tangan" />
-            <img src="img/program/belajar3.jpg" alt="Siswa sekolah dasar dalam keadaan ceria" />
+            <img src="../img/program/belajar2.jpg" alt="Siswa sedang angkat tangan" />
+            <img src="../img/program/belajar3.jpg" alt="Siswa sekolah dasar dalam keadaan ceria" />
           </div>
           <button class="carousel-btn next-btn">&gt;</button>
         </div>
@@ -158,7 +157,7 @@
             Indonesia !
           </p>
 
-          <a href="php/donasi.php" class="cta">Donasi Sekarang</a>
+          <a href="donasi.php" class="cta">Donasi Sekarang</a>
         </div>
       </div>
     </section>
@@ -172,11 +171,11 @@
         Jangan ragu untuk menghubungi kami!
       </p>
 
-      <form action="" method="post">
-        <input type="text" placeholder="Nama Lengkap" required />
-        <input type="email" placeholder="Email" required />
-        <input type="text" placeholder="Telepon" required />
-        <textarea placeholder="Pesan" required></textarea>
+      <form action="kontak.php" method="post">
+        <input type="text" placeholder="Nama Lengkap" name="nama_lengkap" required />
+        <input type="email" placeholder="Email" name="email" required />
+        <input type="text" placeholder="Telepon" name="telepon" required />
+        <textarea placeholder="Pesan" name="pesan" required></textarea>
         <button type="submit">Kirim Pesan</button>
       </form>
     </section>
@@ -206,12 +205,12 @@
           Setiap donasi berarti. Dukungan dan kontribusi Anda mendukung upaya kami dalam memajukan
           pendidikan di Indonesia.
         </p>
-        <a href="php/donasi.php" class="cta">Donasi Sekarang</a>
+        <a href="donasi.php" class="cta">Donasi Sekarang</a>
       </div>
 
       <div class="credit">
         <p>
-          Created by <a href="">Gde Jananuraga, dkk</a>. | &copy 2024 Pustaka Kita. All Rights
+          Created by <a href="">Pemuda Bingung</a>. | &copy 2024 Pustaka Kita. All Rights
           Reserved.
         </p>
       </div>
@@ -224,7 +223,7 @@
     </script>
 
     <!-- Javascript -->
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 
   </body>
 </html>

@@ -1,62 +1,52 @@
 <?php
-include('koneksi.php');
-
+include '../php/koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Mengambil data dari form
     $nama_sekolah = $_POST['nama_sekolah'];
     $alamat = $_POST['alamat'];
     $kontak_telepon = $_POST['kontak_telepon'];
     $email = $_POST['email'];
     $dana = $_POST['dana'];
     $tujuan = $_POST['tujuan'];
-
-    // Upload file
+    
+    // Mengupload foto bukti
     $foto_bukti = $_FILES['foto_bukti']['name'];
     $foto_bukti_tmp = $_FILES['foto_bukti']['tmp_name'];
+    $foto_bukti_path = "uploads/" . basename($foto_bukti);
 
-    $upload_dir = __DIR__ . "/uploads/";
-    if (!is_dir($upload_dir)) {
-        mkdir($upload_dir, 0777, true); // Buat folder jika belum ada
-    }
-
-    $foto_bukti_path = $upload_dir . basename($foto_bukti);
-
+    // Validasi apakah file gambar valid
     if (move_uploaded_file($foto_bukti_tmp, $foto_bukti_path)) {
-        // Simpan data ke database
-        $sql = "INSERT INTO bantuan_sekolah (nama_sekolah, alamat, kontak_telepon, email, dana, tujuan, foto_bukti)
+        // Query untuk menyimpan data ke dalam database
+        $sql = "INSERT INTO bantuan (nama_sekolah, alamat, kontak_telepon, email, dana, tujuan, foto_bukti)
                 VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql);
-        if ($stmt) {
-            $stmt->bind_param(
-                "ssssiss",
-                $nama_sekolah,
-                $alamat,
-                $kontak_telepon,
-                $email,
-                $dana,
-                $tujuan,
-                $foto_bukti_path
-            );
+        $stmt->bind_param(
+            "ssssiss", 
+            $nama_sekolah, 
+            $alamat, 
+            $kontak_telepon, 
+            $email, 
+            $dana, 
+            $tujuan, 
+            $foto_bukti_path
+        );
 
-            if ($stmt->execute()) {
-                echo "<script>alert('Data berhasil disimpan.'); window.location.href = '../index.php';</script>";
-            } else {
-                echo "Kesalahan saat menyimpan data: " . $stmt->error;
-            }
+        if ($stmt->execute()) {
+            echo "<script>alert('Donasi berhasil!'); window.location.href = 'index.php';</script>";
         } else {
-            echo "Kesalahan pada statement SQL: " . $conn->error;
+            echo "<script>alert('Terjadi kesalahan: " . $stmt->error . "');</script>";
         }
+
+        $stmt->close();
     } else {
-        echo "Gagal mengupload file. Periksa izin folder atau path tujuan.";
+        echo "<script>alert('Upload foto gagal.');</script>";
     }
 }
 
-
-
+$conn->close();
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">

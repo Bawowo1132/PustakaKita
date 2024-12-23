@@ -1,31 +1,56 @@
+// Toggle class active
+const navbarNav = document.querySelector(".navbar-nav");
+// ketika hamburger menu diklik
+document.querySelector("#hamburger-menu").onclick = () => {
+  navbarNav.classList.toggle("active");
+};
+
+// Klik di luar sidebar untuk menghilangkan nav
+
+const hamburger = document.querySelector("#hamburger-menu");
+
+document.addEventListener("click", function (e) {
+  if (!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
+    navbarNav.classList.remove("active");
+  }
+});
+
+// Carousel Functionality
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
-  const emailInput = form.querySelector('input[type="email"]');
-  const passwordInput = form.querySelector('input[type="password"]');
-  
-  form.addEventListener("submit", (event) => {
-    event.preventDefault(); // Mencegah pengiriman form
+  const images = document.querySelectorAll(".carousel-images img");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+  let currentIndex = 0;
 
-    if (!email || !validateEmail(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
+  function updateCarousel() {
+    images.forEach((img, index) => {
+      img.classList.toggle("active", index === currentIndex);
+    });
+  }
 
-    if (!password) {
-      alert("Please enter your password.");
-      return;
-    }
-
-    // Simulate form submission
-    alert("Login successful! Welcome back.");
-    form.reset(); // Mengosongkan form setelah submit
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarousel();
   });
 
-  function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateCarousel();
+  });
+
+  updateCarousel(); // Initialize carousel
+});
+
+// Dummy Data for Donation Stats
+const donorsCount = 12500;
+const fundsRaised = 750000000;
+
+// Update Stats in Donation Section
+document.addEventListener("DOMContentLoaded", () => {
+  const donorsCountElement = document.querySelector("#donors-count");
+  const fundsRaisedElement = document.querySelector("#funds-raised");
+
+  donorsCountElement.textContent = donorsCount.toLocaleString("id-ID");
+  fundsRaisedElement.textContent = `Rp ${fundsRaised.toLocaleString("id-ID")}`;
 });
