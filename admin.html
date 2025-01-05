@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Administrator</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="sidebar">
+        <nav class="navbar">
+          <a href="#" class="navbar-logo">Pustaka<span>Kita</span>.</a>
+        </nav>
+        <div class="sidebar-header">
+          <input type="file" id="upload-profile" style="display: none" />
+          <img
+            src="https://tse4.mm.bing.net/th?id=OIP.SAcV4rjQCseubnk32USHigHaHx&pid=Api&P=0&h=180"
+            alt="Profile Picture"
+            class="profile-picture"
+            id="profile-picture"
+          />
+          <h5>Dashboard</h5>
+          <p>Administrator</p>
+        </div>
+        <ul>
+          <li><a href="#beranda" class="menu-item">Beranda</a></li>
+          <li>
+            <a href="#" class="menu-item">Donasi Pendidikan</a>
+            <ul class="submenu">
+              <li><a href="#data-donasi" class="menu-item"> Donasi</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="menu-item">Pendaftar</a>
+            <ul class="submenu">
+              <li><a href="#beasiswa-cendekia" class="menu-item">Beasiswa Cendekia</a></li>
+              <li><a href="#bantuan-sekolah" class="menu-item">Bantuan Sekolah Cendekia</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#status-pendaftaran" class="menu-item">Status Pendaftaran</a>
+          </li>
+
+          <li><a href="#feedback" class="menu-item">Feedback</a></li>
+          <li><a href="#laporan" class="menu-item">Laporan</a></li>
+        </ul>
+      </nav>
+
+      <main class="content">
+        <header>
+          <h2>Dashboard</h2>
+          <button class="logout-button">Logout</button>
+        </header>
+        <div class="alert">Welcome admin ganteng.</div>
+        <section id="beranda" class="content-section">
+          <h3>Selamat datang di Dashboard</h3>
+          <div class="cards">
+            <div class="card">
+              <h5>Total Donasi</h5>
+              <p class="number">8</p>
+            </div>
+            <div class="card">
+              <h5>Total Transaksi</h5>
+              <p class="number">24</p>
+            </div>
+            <div class="card">
+              <h5>Feedback Masuk</h5>
+              <p class="number">2</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="data-donasi" class="content-section" style="display: none">
+          <h3>Data Donasi</h3>
+          <!-- Diagram Statistik Donasi -->
+          <div class="chart-container">
+            <canvas id="donasiChart"></canvas>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama Donatur</th>
+                <th>No.Telepon</th>
+                <th>Total Donasi</th>
+                <th>Status Donasi</th>
+                <th>Tanggal</th>
+                <th>Metode Pembayaran</th>
+              </tr>
+            </thead>
+            <tbody id="donasi-table">
+              <tr>
+                <td>John Doe</td>
+                <td>08123456789</td>
+                <td>Rp 5.500.000</td>
+                <td>Terkonfirmasi</td>
+                <td>2024-12-10</td>
+                <td>Bank "Transfer"</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="beasiswa-cendekia" class="content-section" style="display: none">
+          <h3>Beasiswa Cendekia</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Tempat,Tgl Lahir</th>
+                <th>NIK</th>
+                <th>Jenis Kelamin</th>
+                <th>Sekolah</th>
+                <th>Alamat</th>
+                <th>Kelas</th>
+                <th>Nilai Rapot</th>
+                <th>Alasan</th>
+                <th>Agama</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aliyah</td>
+                <td>Jember,03-10-2005</td>
+                <td>12345678910</td>
+                <td>Perempuan</td>
+                <td>SMA Negeri 1</td>
+                <td>jl.jember no.123</td>
+                <td>12 SMA</td>
+                <td>Matematika: 90 IPA: 93 Bahasa Indonesia: 89 Bahasa Inggris: 92</td>
+                <td>masalah ekonomi</td>
+                <td>Kristen</td>
+                <td>Diterima</td>
+              </tr>
+              <tr>
+                <td>Rusdi</td>
+                <td>Ngawi,10-11-2005</td>
+                <td>12345671011</td>
+                <td>Laki-Laki</td>
+                <td>SMA Negeri 10</td>
+                <td>jl.Ngawi no.133</td>
+                <td>12 SMA</td>
+                <td>Matematika: 88 IPA: 95 Bahasa Indonesia: 92 Bahasa Inggris: 95</td>
+                <td>menghemat biaya</td>
+                <td>buddha</td>
+                <td>Diterima</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="bantuan-sekolah" class="content-section" style="display: none">
+          <h3>Bantuan Sekolah Cendekia</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Nama Sekolah</th>
+                <th>Alamat</th>
+                <th>Kontak Telepon</th>
+                <th>Email</th>
+                <th>Perkiraan dana yang dibutuhkan</th>
+                <th>Tujuan Bantuan</th>
+                <th>Foto bukti kondisi Sekolah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Alfian</td>
+                <td>SMP Negeri 5</td>
+                <td>Jl. Merak No.23</td>
+                <td>08162518371</td>
+                <td>SMPNEGERI5MERAK@gmail.com</td>
+                <td>1500000</td>
+                <td>Untuk merenovasi toilet sekolah yang sudah tidak layak pakai</td>
+                <td><a href="#">Toilet.jpg</a></td>
+              </tr>
+              <tr>
+                <td>Dewi</td>
+                <td>SD Negeri 3</td>
+                <td>Jl. siliwangi No.113</td>
+                <td>08973615371</td>
+                <td>SDN3SILIWANGI@gmail.com</td>
+                <td>750000</td>
+                <td>
+                  Untuk merenovasi Ruang kelas 6 yang atapnya ada yang bocor dan keramiknya retak
+                </td>
+                <td><a href="#">Kelas_6.jpg</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="status-pendaftaran" class="content-section" style="display: none">
+          <h3>Status Pendaftaran</h3>
+          <button id="add-penerima" class="logout-button">Tambah Penerima</button>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama Pendaftar</th>
+                <th>Program</th>
+                <th>Status</th>
+                <th>Sekolah</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="pendaftaran-table">
+              <!-- Contoh Data -->
+              <tr>
+                <td>Rina</td>
+                <td>Beasiswa Cendekia</td>
+                <td>Diterima</td>
+                <td>SMA Negeri 1</td>
+                <td>
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <div id="modal-penerima" style="display: none">
+          <h3>Tambah/Perbarui Penerima</h3>
+          <form id="form-penerima">
+            <label for="nama-pendaftar">Nama Pendaftar:</label>
+            <input type="text" id="nama-pendaftar" required /><br /><br />
+            <label for="program-pendaftar">Program:</label>
+            <select id="program-pendaftar" required>
+              <option value="Beasiswa Cendekia">Beasiswa Cendekia</option>
+              <option value="Bantuan Sekolah Cendekia">Bantuan Sekolah Cendekia</option></select
+            ><br /><br />
+            <label for="status-pendaftar">Status:</label>
+            <select id="status-pendaftar" required>
+              <option value="Diterima">Diterima</option>
+              <option value="Tidak Diterima">Tidak Diterima</option></select
+            ><br /><br />
+            <label for="sekolah-pendaftar">Sekolah:</label>
+            <input type="text" id="sekolah-pendaftar" required /><br /><br />
+            <button type="submit">Simpan</button>
+            <button type="button" id="cancel-penerima">Batal</button>
+          </form>
+        </div>
+
+        <section id="feedback" class="content-section" style="display: none">
+          <h3>Feedback</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama Pengirim</th>
+                <th>No.Telepon</th>
+                <th>Email</th>
+                <th>Pesan</th>
+                <th>Tanggal</th>
+                <th>Balasan</th>
+              </tr>
+            </thead>
+            <tbody id="feedback-table">
+              <tr>
+                <td>Alice</td>
+                <td>08171635281</td>
+                <td>alice@example.com</td>
+                <td>Great service, thank you!</td>
+                <td>2024-12-12</td>
+                <td>
+                  <textarea rows="2" cols="20" placeholder="Tulis balasan di sini..."></textarea
+                  ><br />
+                  <button class="send-reply-button">Kirim</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>089735173625</td>
+                <td>bob@example.com</td>
+                <td>Needs improvement on the donation process.</td>
+                <td>2024-12-11</td>
+                <td>
+                  <textarea rows="2" cols="20" placeholder="Tulis balasan di sini..."></textarea
+                  ><br />
+                  <button class="send-reply-button">Kirim</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="laporan" class="content-section" style="display: none">
+          <h3>Laporan</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Judul Laporan</th>
+                <th>Tanggal Laporan</th>
+                <th>Jenis Laporan</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody id="laporan-table">
+              <tr>
+                <td>Laporan Donasi Bulan November</td>
+                <td>2024-11-30</td>
+                <td>Donasi</td>
+                <td><a href="#">Download PDF</a></td>
+              </tr>
+              <tr>
+                <td>Laporan Transaksi Bulan Desember</td>
+                <td>2024-12-10</td>
+                <td>Transaksi</td>
+                <td><a href="#">Download PDF</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="status-siswa" class="content-section" style="display: none">
+          <h3>Status Pengajuan Beasiswa Siswa</h3>
+          <button id="add-status" class="logout-button">Tambah Status</button>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nama Siswa</th>
+                <th>Status Pengajuan</th>
+                <th>Sekolah Menerima</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="status-siswa-table">
+              <tr>
+                <td>Alice</td>
+                <td>Diterima</td>
+                <td>Sekolah ABC</td>
+                <td>
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bob</td>
+                <td>Tidak Diterima</td>
+                <td>—</td>
+                <td>
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Charlie</td>
+                <td>Diterima</td>
+                <td>Sekolah XYZ</td>
+                <td>
+                  <button class="edit-button">Edit</button>
+                  <button class="delete-button">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <div id="modal">
+          <h3>Tambah Status Pengajuan Beasiswa</h3>
+          <form id="data-form">
+            <label for="student-name">Nama Siswa:</label><br />
+            <input type="text" id="student-name" required /><br /><br />
+            <label for="status">Status Pengajuan:</label><br />
+            <select id="status" required>
+              <option value="Diterima">Diterima</option>
+              <option value="Tidak Diterima">Tidak Diterima</option></select
+            ><br /><br />
+            <label for="school">Sekolah Menerima:</label><br />
+            <input type="text" id="school" required /><br /><br />
+            <button type="submit">Simpan</button>
+            <button type="button" id="cancel-button">Batal</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

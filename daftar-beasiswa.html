@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Beasiswa Cendekia</title>
+    <link rel="stylesheet" href="css/daftar-beasiswa.css" />
+  </head>
+
+  <body>
+    <h1>Form Pendaftaran Beasiswa Cendekia</h1>
+    <form action="#" method="POST">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required /><br /><br />
+
+      <label for="ttl">Tempat, Tgl Lahir:</label>
+      <input type="text" id="ttl" name="ttl" required /><br /><br />
+
+      <label for="nik">NIK:</label>
+      <input type="text" id="nik" name="nik" required /><br /><br />
+
+      <label for="jenis_kelamin">Jenis Kelamin:</label>
+      <select id="jenis_kelamin" name="jenis_kelamin" required>
+        <option value="">Pilih</option>
+        <option value="Laki-laki">Laki-laki</option>
+        <option value="Perempuan">Perempuan</option></select
+      ><br /><br />
+
+      <label for="asal_sekolah">Asal Sekolah:</label>
+      <input type="text" id="asal_sekolah" name="asal_sekolah" required /><br /><br />
+
+      <label for="alamat">Alamat:</label>
+      <textarea id="alamat" name="alamat" rows="4" required></textarea><br /><br />
+
+      <label for="kelas">Kelas:</label>
+      <input type="text" id="kelas" name="kelas" required /><br /><br />
+
+      <fieldset>
+        <legend>Nilai Raport</legend>
+        <label for="matematika">Matematika:</label>
+        <input
+          type="number"
+          id="matematika"
+          name="nilai_matematika"
+          min="0"
+          max="100"
+          required
+        /><br /><br />
+
+        <label for="ipa">IPA:</label>
+        <input type="number" id="ipa" name="nilai_ipa" min="0" max="100" required /><br /><br />
+
+        <label for="bindo">Bahasa Indonesia:</label>
+        <input type="number" id="bindo" name="nilai_bindo" min="0" max="100" required /><br /><br />
+
+        <label for="binggris">Bahasa Inggris:</label>
+        <input
+          type="number"
+          id="binggris"
+          name="nilai_binggris"
+          min="0"
+          max="100"
+          required
+        /><br /><br />
+      </fieldset>
+
+      <label for="alasan">Alasan Mengikuti Beasiswa Cendekia:</label>
+      <textarea id="alasan" name="alasan" rows="4" required></textarea><br /><br />
+
+      <label for="agama">Agama:</label>
+      <select id="agama" name="agama" required>
+        <option value="">Pilih</option>
+        <option value="Islam">Islam</option>
+        <option value="Protestan">Protestan</option>
+        <option value="Katolik">Katolik</option>
+        <option value="Hindu">Hindu</option>
+        <option value="Buddha">Buddha</option>
+        <option value="Konghucu">Konghucu</option></select
+      ><br /><br />
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <script src="js/daftar-beasiswa.js"></script>
+  </body>
+</html>

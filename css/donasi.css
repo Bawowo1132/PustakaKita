@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff; /* Background putih */
+    color: #000; /* Teks hitam */
+    line-height: 1.6;
+  }
+  
+  /* Overlay Form Container */
+  .donation-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Transparan putih */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .donation-form-container {
+    background: #fff; /* Background putih */
+    border-radius: 10px;
+    padding: 40px 20px; /* Menambahkan padding lebih besar */
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan untuk memberi efek kedalaman */
+    border: 2px solid #000; /* Border hitam pada form */
+    position: relative;
+  }
+  
+  /* Mengatur tampilan judul */
+  h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #000; /* Teks hitam */
+  }
+  
+  /* Opsi Jumlah Donasi - Tombol Persegi Panjang dan Baris ke Bawah */
+  .amount-options {
+    display: flex;
+    flex-direction: column; /* Mengubah dari horizontal ke vertikal */
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .amount-btn {
+    width: 100%; /* Tombol memenuhi lebar container */
+    background: #fff; /* Background putih */
+    color: #000; /* Teks hitam */
+    padding: 15px;
+    border: 2px solid #000; /* Border hitam pada tombol */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .amount-btn:hover {
+    background: #f0f0f0; /* Background abu-abu terang saat hover */
+    transform: scale(1.05);
+  }
+  
+  .other-donation input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+  }
+  
+  /* Tombol CTA */
+  .cta {
+    background: #fff; /* Background putih */
+    color: #000; /* Teks hitam */
+    padding: 12px;
+    margin-top: 20px;
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cta:hover {
+    background: #f0f0f0; /* Background abu-abu terang saat hover */
+    color: #000; /* Teks hitam */
+    transform: scale(1.05);
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-size: 0.9em;
+    color: #000; /* Teks hitam untuk label */
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000; /* Border hitam */
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+  }
+  
+  /* Tombol Kembali pada Form 2 dan Form 3 - Diletakkan di dalam form */
+  .back-btn {
+    background: transparent;
+    color: #000; /* Teks hitam */
+    border: none;
+    font-size: 0,90em;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Posisikan tombol kembali ke kiri atas dalam form */
+    cursor: pointer;
+    z-index: 1; /* Agar tombol kembali tetap berada di atas */
+  }
+  
+  /* Notification Style */
+  .notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; /* White background for success message */
+    color: #000; /* Black text */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+  }
+  
+  .hidden {
+    display: none;
+  }
